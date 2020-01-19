@@ -1,11 +1,7 @@
 public class Main {
 
     public static void main(String[] args){
-        int len = 50000;
-
-        runBubbleSort(len);
-        runInsertionSort(len);
-        runSelectionSort(len);
+        int len = 5000;
 
     }
 
@@ -41,5 +37,42 @@ public class Main {
         Sorts.selectionSort(data);
 
         System.out.println(System.currentTimeMillis()-startTime);
+    }
+
+    public static void runMergeSort(int len){
+        int[] data = generateData(len);
+
+        Long startTime = System.currentTimeMillis();
+        Sorts.mergeSort(data,0,len-1);
+
+        for(int i=0 ; i<len;i++){
+            System.out.println(data[i]);
+        }
+
+        System.out.println(System.currentTimeMillis()-startTime);
+    }
+
+    public static void runQuickSort(int len){
+        int[] data = generateData(len);
+
+        Long startTime = System.currentTimeMillis();
+        Sorts.quickSort(data);
+
+        for(int i=0 ; i<len;i++){
+            System.out.println(data[i]);
+        }
+
+        System.out.println(System.currentTimeMillis()-startTime);
+    }
+
+    public static int runKthSmallest(int len){
+        int[] data = generateData(len);
+
+        Long startTime = System.currentTimeMillis();
+        int result = KthSmallest.KthSmallest(data, 100);
+
+        System.out.println(System.currentTimeMillis()-startTime);
+
+        return result;
     }
 }
