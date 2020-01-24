@@ -1,7 +1,9 @@
 public class Main {
 
     public static void main(String[] args){
-        int len = 5000;
+        int len = 500;
+
+        System.out.println(BinarySearch.binarySearch3_1(generateOrderData(len),1));
 
     }
 
@@ -9,6 +11,14 @@ public class Main {
         int[] data = new int[len];
         for(int i=0; i<len; i++){
             data[i] = (int)(Math.random()*len);
+        }
+        return data;
+    }
+
+    public static int[] generateOrderData(int len){
+        int[] data = new int[len];
+        for(int i=0; i<len; i++){
+            data[i] = i/2;
         }
         return data;
     }
