@@ -1,10 +1,18 @@
 public class Main {
 
     public static void main(String[] args){
-        int len = 500;
+        LruCache lru = new LruCache(3);
 
-        System.out.println(BinarySearch.binarySearch3_1(generateOrderData(len),1));
+        lru.put(1,"beijing");
+        lru.put(2,"shanghai");
+        lru.put(3,"tianjin");
+        lru.put(4,"chongqing");
+        lru.put(5,"shenzhen");
 
+        lru.put(3,"china");
+
+        lru.print();
+        lru.printLastNode();
     }
 
     public static int[] generateData(int len){
@@ -28,6 +36,9 @@ public class Main {
 
         Long startTime = System.currentTimeMillis();
         Sorts.bubbleSort(data);
+        for(int i=0 ; i<len;i++){
+            System.out.println(data[i]);
+        }
         System.out.println(System.currentTimeMillis()-startTime);
     }
 
@@ -37,6 +48,10 @@ public class Main {
         Long startTime = System.currentTimeMillis();
         Sorts.insertionSort(data);
 
+        for(int i=0 ; i<len;i++){
+            System.out.println(data[i]);
+        }
+
         System.out.println(System.currentTimeMillis()-startTime);
     }
 
@@ -45,6 +60,10 @@ public class Main {
 
         Long startTime = System.currentTimeMillis();
         Sorts.selectionSort(data);
+
+        for(int i=0 ; i<len;i++){
+            System.out.println(data[i]);
+        }
 
         System.out.println(System.currentTimeMillis()-startTime);
     }
