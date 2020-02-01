@@ -1,18 +1,7 @@
 public class Main {
 
     public static void main(String[] args){
-        LruCache lru = new LruCache(3);
-
-        lru.put(1,"beijing");
-        lru.put(2,"shanghai");
-        lru.put(3,"tianjin");
-        lru.put(4,"chongqing");
-        lru.put(5,"shenzhen");
-
-        lru.put(3,"china");
-
-        lru.print();
-        lru.printLastNode();
+        new Main().runBinarySearchTree();
     }
 
     public static int[] generateData(int len){
@@ -103,5 +92,60 @@ public class Main {
         System.out.println(System.currentTimeMillis()-startTime);
 
         return result;
+    }
+
+    public void runBinarySearchTree(){
+        BinarySearchTree bst = new BinarySearchTree(20);
+        bst.insert(10);
+        bst.insert(30);
+        bst.insert(5);
+        bst.insert(25);
+        bst.insert(6);
+        bst.insert(23);
+        bst.insert(27);
+
+        System.out.println("preOrderSearch");
+        System.out.println("-------------");
+        bst.preOrderSearch();
+
+        System.out.println("");
+        System.out.println("");
+        System.out.println("inOrderSearch");
+        System.out.println("-------------");
+        bst.inOrderSearch();
+
+        System.out.println("");
+        System.out.println("");
+        System.out.println("postOrderSearch");
+        System.out.println("-------------");
+        bst.postOrderSearch();
+
+        System.out.println("");
+        System.out.println("");
+        System.out.println("search");
+        System.out.println("-------------");
+        System.out.println(bst.search(23));
+
+        System.out.println("");
+        System.out.println("");
+        System.out.println("max value");
+        System.out.println("-------------");
+        System.out.println(bst.maxValue().value);
+
+        System.out.println("");
+        System.out.println("");
+        System.out.println("min value");
+        System.out.println("-------------");
+        System.out.println(bst.minValue().value);
+
+        System.out.println("");
+        System.out.println("");
+        System.out.println("delete");
+        System.out.println("-------------");
+        System.out.println(bst.delete(10));
+        bst.inOrderSearch();
+        System.out.println("");
+        System.out.println(bst.delete(25));
+        bst.inOrderSearch();
     }
 }
