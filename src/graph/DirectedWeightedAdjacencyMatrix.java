@@ -71,6 +71,7 @@ public class DirectedWeightedAdjacencyMatrix {
 
     // 两点之间的最短路径， 可以直接套用单源路径算法
     public int getShortestDistanceBetweenTwoNode(int from, int to) {
+        if ((from >= size || from < 0) && (to >= size || to < 0)) throw new IllegalArgumentException();
         int[] distance = getDistanceFromOneNodeToAllNode(from);
 
         return distance[to];
@@ -80,6 +81,7 @@ public class DirectedWeightedAdjacencyMatrix {
     // 时间复杂度O(size^2), 空间复杂度O(size^2+size)
     // 这个算法有一个限制，即距离（权重）必须为正，这样在距离想加的时候能正确的运转
     public int[] getDistanceFromOneNodeToAllNode(int from) {
+        if (from >= size || from < 0) throw new IllegalArgumentException();
         boolean[][] hasVisited = new boolean[size][size];
         int[] distance = new int[size];
         for (boolean[] visited : hasVisited) {
