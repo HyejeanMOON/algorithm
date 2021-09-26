@@ -1,7 +1,46 @@
+import graph.DirectedWeightedAdjacencyList;
+import graph.DirectedWeightedAdjacencyMatrix;
+
 public class Main {
 
     public static void main(String[] args) {
-        new Main().runTrie();
+        testDirectedWeightedAdjacencyMatrix();
+    }
+
+    public static void testHeap(){
+
+        Heap heap = new Heap(10);
+        heap.insert(1);
+        heap.insert(3);
+        heap.insert(5);
+        heap.insert(2);
+        heap.insert(7);
+        heap.insert(9);
+        heap.sort();
+        heap.print();
+    }
+
+    public static void testDirectedWeightedAdjacencyMatrix(){
+        DirectedWeightedAdjacencyMatrix matrix = new DirectedWeightedAdjacencyMatrix(5);
+        matrix.add(0,1,2);
+        matrix.add(1,2,1);
+        matrix.add(1,4,3);
+        matrix.add(1,3,1);
+        matrix.add(2,4,1);
+        matrix.add(4,3,4);
+        matrix.add(3,0,5);
+        System.out.println(matrix.hasCircleConnection());
+        matrix.getDistanceFromOneNodeToAllNode(1);
+    }
+
+    public static void testDirectedWeightedAdjacencyList(){
+        DirectedWeightedAdjacencyList graphList = new DirectedWeightedAdjacencyList(5);
+        graphList.add(0,1,2);
+        graphList.add(1,2,1);
+        graphList.add(2,4,3);
+        graphList.add(4,3,4);
+        graphList.add(3,0,5);
+        System.out.println(graphList.hasConnectionBetweenTwoNode(0,2));
     }
 
     public static int[] generateData(int len) {
