@@ -4,11 +4,24 @@ import graph.DirectedWeightedAdjacencyMatrix;
 public class Main {
 
     public static void main(String[] args) {
-        testDirectedWeightedAdjacencyMatrix();
+        testPascalsTriangle();
+    }
+
+    public static void testPascalsTriangle(){
+        PascalsTriangle triangle = new PascalsTriangle(10);
+        triangle.print();
+        System.out.println(triangle.levelSum(9));
+        System.out.println(triangle.possibility(4,1));
+    }
+
+    public static void testSegmentTree(){
+        int[] list = new int[]{1,3,5,2,4,7,6};
+        SegmentTree tree  = new SegmentTree(list);
+        tree.updateMin(1,1);
+        System.out.println(tree.getMin(1,5));
     }
 
     public static void testHeap(){
-
         Heap heap = new Heap(10);
         heap.insert(1);
         heap.insert(3);
