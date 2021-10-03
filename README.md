@@ -8,3 +8,5 @@
 5. 二叉搜索树
 6. 堆，堆排序
 7. 图，邻接表，邻接矩阵，单源最短路径算法（dijkstra算法）
+8. 线段树(SegmentTree)
+9. 杨辉三角(Pascals Triangle)
