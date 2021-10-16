@@ -1,3 +1,5 @@
+package two_pointer;
+
 public class BinarySearch {
 
     public static int binarySearch1(int[] data, int value) {

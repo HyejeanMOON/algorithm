@@ -119,8 +119,8 @@ public class LruCache<K, V> {
 
     // 打印key和value
     public void print() {
-        Set keys = map.keySet();
-        Iterator iterator = keys.iterator();
+        Set<K> keys = map.keySet();
+        Iterator<K> iterator = keys.iterator();
 
         while (iterator.hasNext()) {
             Object obj = iterator.next();

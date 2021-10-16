@@ -1,3 +1,5 @@
+package sort;
+
 public class Sorts {
     // 冒泡排序
     // 冒泡排序是稳定的原地排序， 主要思想是两个相邻的数字进行比较交换

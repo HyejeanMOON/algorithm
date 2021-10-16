@@ -1,3 +1,5 @@
+package sort;
+
 import java.util.Arrays;
 
 public class Heap {
@@ -9,7 +11,6 @@ public class Heap {
     // 需要注意的是，为了让除于2的操作更加容易，我们存储数据的时候需要从1位置。
     // 加入父节点的位置为i，则它的两个子节点的位置为2*i和2*i+1
     // 建堆即heapify的时间复杂度是O(n)
-
 
     int[] list;
     int capacity;
